@@ -97,3 +97,25 @@
   ### Properties
   - **open, onClose**: To open and close dialog
   - **Additional properties**:Like `hideBackdrop`,`transition`, etc.
+
+## Modal:
+
+- MOdal is a popup window that can be shown to the user
+- Has backdrop freture which blurs the background when it's open
+
+  ### Properties
+  - **open, onClose**: To open and close dialog
+  - **Additional properties**:Like `hideBackdrop`,`transition`, etc.
+
+- The Dialog box covers everything that the modal has but they have different use-cases
+  - Dialog: To get a confirmation message or a permission which can be skipped
+  - Modal: The modal requires an action to be completed and it can't be skipped
+
+## List:
+
+- Group of elements
+- have child elemens lile `<ListItem/>` to add items to the list
+
+  ### Properties
+  - **divider**: to add a horizontal line
+  - **Additional Properties**: like `component`, `sx` etc.

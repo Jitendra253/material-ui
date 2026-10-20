@@ -1,23 +1,37 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
+import { Box, Button, Modal, Typography } from "@mui/material";
 import { useState } from "react";
 const Test = () => {
   const [open, setOpen] = useState(false)
   return (
     <div>
-      <Button onClick={() => setOpen(true)}>Open Dialog</Button>
-      <Dialog open={open} onClose={() => setOpen(false)}>
-        <DialogTitle>This is my Dialogue</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            A dialog is a popup window which can as user someting like informateion
-          </DialogContentText>
-        </DialogContent>
+      <Button onClick={() => setOpen(true)}>Open Modal</Button>
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 400,
+            bgcolor: "background.paper",
+            boxShadow: 24,
+            p: 4,
+            borderRadius: 2,
+          }}
+        >
+          <Typography variant="h6">
+            This is a modal
+          </Typography>
 
-        <DialogActions>
-          <Button onClick={() => setOpen(false)}>Cancel</Button>
-          <Button onClick={() => setOpen(false)}>Agree</Button>
-        </DialogActions>
-      </Dialog>
+          <Button
+            variant="contained"
+            onClick={() => setOpen(false)}
+            sx={{ mt: 2 }}
+          >
+            Close
+          </Button>
+        </Box>
+      </Modal>
     </div>
   )
 }
