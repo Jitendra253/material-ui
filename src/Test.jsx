@@ -1,13 +1,11 @@
-import { Box } from '@mui/material';
-import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp';
-import IconButton from '@mui/material/IconButton';
+import { Box, Typography, useTheme } from '@mui/material';
 
 const Test = () => {
+  const theme = useTheme();
+  console.log(theme)
   return (
     <Box sx={{ height: 400, width: '100%' }}>
-      <IconButton>
-        <AccountCircleSharpIcon />
-      </IconButton>
+      <Typography variant='h1' color='primary'>Hellow world</Typography>
     </Box>
   )
 }

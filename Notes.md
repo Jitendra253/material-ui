@@ -171,3 +171,12 @@
 
   ### Properties
   - **onClick, Color**: to add events and color
+
+## ThemeProvider:
+
+- Used to modify current Theme
+- Child components needs to be wrapped inside it
+- You can access current theme by useTheme()
+
+  ### Properties
+  - **theme**: to refer modified theme
