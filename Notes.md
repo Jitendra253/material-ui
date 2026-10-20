@@ -34,3 +34,12 @@
   ### Properties
   - **defaultChecked**: For By Default Checked
   - **Additional properties**: `onChange`, `disabled`, `sx`, etc.
+
+## Select:
+
+- Used as dropdowns
+- Uses a Menu List to select a dropdown
+
+  ### Properties
+  - **defaultValue**: For By Default Selected Item.
+  - **Additional properties**: `onChange`, `disabled`, `sx`, etc.

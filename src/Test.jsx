@@ -1,4 +1,4 @@
-import { Button, TextField, FormGroup, FormControlLabel, Checkbox } from '@mui/material'
+import { Button, TextField, FormGroup, FormControlLabel, Checkbox, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
 import { useState } from 'react'
 
 const Test = () => {
@@ -7,6 +7,7 @@ const Test = () => {
     email: "",
     password: "",
     subscribe: false,
+    age: 0
   })
   const handleChange = (e) => {
     setInputs(prev => ({
@@ -51,6 +52,20 @@ const Test = () => {
               ...prev, subscribe: !inputs.subscribe
             }))} />} label="Subscribe  To Newsletter" />
           </FormGroup>
+
+          <FormControl fullWidth>
+            <InputLabel  >Age</InputLabel>
+            <Select
+              value={inputs.age}
+              label="Age"
+              name="age"
+              onChange={handleChange}
+            >
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
           <Button type='submit'>Submit</Button>
         </form>
       </div>
