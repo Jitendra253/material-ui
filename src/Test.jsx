@@ -1,37 +1,33 @@
-import { Box, Button, Modal, Typography } from "@mui/material";
+import { Collapse, List, ListItem, ListItemButton, ListItemIcon, ListItemText, } from "@mui/material";
 import { useState } from "react";
 const Test = () => {
+  const array = ["First", "Second", "Third", "Fourth"];
   const [open, setOpen] = useState(false)
   return (
     <div>
-      <Button onClick={() => setOpen(true)}>Open Modal</Button>
-      <Modal open={open} onClose={() => setOpen(false)}>
-        <Box
-          sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 400,
-            bgcolor: "background.paper",
-            boxShadow: 24,
-            p: 4,
-            borderRadius: 2,
-          }}
-        >
-          <Typography variant="h6">
-            This is a modal
-          </Typography>
+      <List>
+        <ListItem>
+          <ListItemButton onClick={() => setOpen(prev => !prev)}>
+            <ListItemIcon >{">"}</ListItemIcon>
+            <ListItemText primary="Expand List" />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      <Collapse in={open}>
+        <List sx={{ marginLeft: '200px' }}>
+          {
+            array.map((item) => (
+              <ListItem divider>
+                <ListItemButton>
+                  <ListItemText primary={item} />
+                </ListItemButton>
+              </ListItem>
+            ))
+          }
 
-          <Button
-            variant="contained"
-            onClick={() => setOpen(false)}
-            sx={{ mt: 2 }}
-          >
-            Close
-          </Button>
-        </Box>
-      </Modal>
+        </List>
+      </Collapse>
+
     </div>
   )
 }
