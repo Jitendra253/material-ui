@@ -147,3 +147,11 @@
   ### Properties
   - **variant, cols**: to add styles and columnsin group
   - **Additional properties**:Like `gap`,`sx`, etc.
+
+## DataGrid:
+
+- Used to add Tables with bunch of advance properties to add
+- Fully customizable
+
+  ### Properties
+  - **rows, cols**: to add rows and columns fields

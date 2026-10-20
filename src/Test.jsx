@@ -1,68 +1,57 @@
-import { ImageList, ImageListItem, } from "@mui/material";
+import { Box } from '@mui/material';
+import { DataGrid } from '@mui/x-data-grid';
 
-const itemData = [
+const columns = [
+  { field: 'id', headerName: 'ID', width: 90 },
   {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
+    field: 'firstName',
+    headerName: 'First name',
+    width: 150,
+    editable: true,
   },
   {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Burger',
+    field: 'lastName',
+    headerName: 'Last name',
+    width: 150,
+    editable: true,
   },
   {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
+    field: 'age',
+    headerName: 'Age',
+    type: 'number',
+    width: 110,
+    editable: true,
   },
   {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Coffee',
+    field: 'fullName',
+    headerName: 'Full name',
+    rowHeader: true,
+    description: 'This column has a value getter and is not sortable.',
+    sortable: false,
+    width: 160,
+    valueGetter: (value, row) => `${row.firstName || ''} ${row.lastName || ''}`,
   },
-  {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-  },
+];
+
+const rows = [
+  { id: 1, lastName: 'Snow', firstName: 'Jon', age: 14 },
+  { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 31 },
+  { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 31 },
+  { id: 4, lastName: 'Stark', firstName: 'Arya', age: 11 },
+  { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
+  { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
+  { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
+  { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
+  { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
 ];
 const Test = () => {
   return (
-    <div>
-      <ImageList variant="" sx={{ width: 400, height: 400 }} cols={3}>
-        {
-          itemData.map((img, index) => (
-            <ImageListItem key={index}>
-              <img src={img.img} alt={img.title} loading="lazy" />
-            </ImageListItem>
-          ))
-        }
-      </ImageList>
-    </div>
+    <Box sx={{ height: 400, width: '100%' }}>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+      />
+    </Box>
   )
 }
 export default Test;
