@@ -155,3 +155,19 @@
 
   ### Properties
   - **rows, cols**: to add rows and columns fields
+
+## Icons:
+
+- Used to display SVG icon into the webpage
+- can have iconButton for Button effect inside icons.
+
+  ### Properties
+  - **color, size**: to add color and size.
+
+## IconButton:
+
+- Used for Icons to add a button effect in icons
+- Support all button properties
+
+  ### Properties
+  - **onClick, Color**: to add events and color
