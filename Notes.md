@@ -128,3 +128,13 @@
   ### Properties
   - **options, renderInput**: to add options in list, to handle search input.
   - **Additional Properties**: like , `sx` etc.
+
+## Grid System:
+
+- Grid System
+- Container and Items
+- Breakpoints
+
+  ### Properties
+  - **options, renderInput**: to add options in list, to handle search input.
+  - **Additional Properties**: like , `sx` etc.
