@@ -88,3 +88,12 @@
   ### Properties
   - **maxWidth**: To define maximum width
   - **Additional properties**:Like `sx`,`classes`, etc.
+
+## Dialog:
+
+- Dialog is a popup window which informs something to the user.
+- Has backdrop freture which blurs the background when it's open
+
+  ### Properties
+  - **open, onClose**: To open and close dialog
+  - **Additional properties**:Like `hideBackdrop`,`transition`, etc.

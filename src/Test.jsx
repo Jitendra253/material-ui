@@ -1,33 +1,23 @@
-import { CardActionArea, Card, CardMedia, CardContent, Typography, CardActions, Button } from "@mui/material";
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
+import { useState } from "react";
 const Test = () => {
-
+  const [open, setOpen] = useState(false)
   return (
     <div>
-      <Card sx={{ maxWidth: 345 }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140" over
-            sx={{ objectFit: "contain" }}
-            image="https://as1.ftcdn.net/v2/jpg/07/85/50/84/1000_F_785508448_lRSjb84AxqOYpOsSThNJUH11h6Opf16H.webp"
-            alt="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              Lizards are a widespread group of squamate reptiles, with over 6,000
-              species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-        </CardActions>
-      </Card>
+      <Button onClick={() => setOpen(true)}>Open Dialog</Button>
+      <Dialog open={open} onClose={() => setOpen(false)}>
+        <DialogTitle>This is my Dialogue</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            A dialog is a popup window which can as user someting like informateion
+          </DialogContentText>
+        </DialogContent>
+
+        <DialogActions>
+          <Button onClick={() => setOpen(false)}>Cancel</Button>
+          <Button onClick={() => setOpen(false)}>Agree</Button>
+        </DialogActions>
+      </Dialog>
     </div>
   )
 }
