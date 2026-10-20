@@ -138,3 +138,12 @@
   ### Properties
   - **options, renderInput**: to add options in list, to handle search input.
   - **Additional Properties**: like , `sx` etc.
+
+## ImageList:
+
+- Used to display collection of images in a group
+- Have child components to add layout
+
+  ### Properties
+  - **variant, cols**: to add styles and columnsin group
+  - **Additional properties**:Like `gap`,`sx`, etc.
