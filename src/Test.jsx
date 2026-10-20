@@ -1,11 +1,12 @@
-import { Typography, Button, TextField } from '@mui/material'
+import { Button, TextField, FormGroup, FormControlLabel, Checkbox } from '@mui/material'
 import { useState } from 'react'
 
 const Test = () => {
   const [inputs, setInputs] = useState({
     name: "",
     email: "",
-    password: ""
+    password: "",
+    subscribe: false,
   })
   const handleChange = (e) => {
     setInputs(prev => ({
@@ -21,17 +22,7 @@ const Test = () => {
   return (
     <>
       <div>
-        <Typography variant='h5' sx={{ color: "red", border: "1px solid red", borderRadius: "10px" }} >Hello Typography</Typography>
-      </div>
-
-      <div>
-        <Button onClick={() => alert("Btn clicked")} color='success' size='medium' sx={{ margin: 3 }} variant='contained'>First</Button>
-        <Button onClick={() => alert("Btn clicked")} color='error' size='large' sx={{ margin: 3 }} variant='outlined'>Second</Button>
-        <Button onClick={() => alert("Btn clicked")} color='info' size='small' sx={{ margin: 3 }} variant='text'>Third</Button>
-      </div>
-
-      <div>
-        <form onSubmit={handleSubmit}>
+        <form style={{ display: 'flex', flexDirection: 'column' }} onSubmit={handleSubmit}>
           <TextField
             name='name'
             value={inputs.name}
@@ -55,6 +46,11 @@ const Test = () => {
             sx={{ margin: 3 }}
             placeholder='Password'
             variant='filled' />
+          <FormGroup>
+            <FormControlLabel control={<Checkbox onChange={() => setInputs(prev => ({
+              ...prev, subscribe: !inputs.subscribe
+            }))} />} label="Subscribe  To Newsletter" />
+          </FormGroup>
           <Button type='submit'>Submit</Button>
         </form>
       </div>

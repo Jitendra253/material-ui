@@ -25,3 +25,12 @@
   ### Properties
   - **variant**: Styles like `styles`, `outlined`,`filled` etc.
   - **Additional properties**: `onChange`, `type`, `sx`, etc.
+
+## Checkbox:
+
+- Used in form to check options
+- Has more props like styles as compared to html`<input/>`
+
+  ### Properties
+  - **defaultChecked**: For By Default Checked
+  - **Additional properties**: `onChange`, `disabled`, `sx`, etc.
