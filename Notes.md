@@ -119,3 +119,12 @@
   ### Properties
   - **divider**: to add a horizontal line
   - **Additional Properties**: like `component`, `sx` etc.
+
+## AutoComplete:
+
+- Dropdown which works on search feature
+- Options ans textfield needs to be provided to handle search operations
+
+  ### Properties
+  - **options, renderInput**: to add options in list, to handle search input.
+  - **Additional Properties**: like , `sx` etc.
