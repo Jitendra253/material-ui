@@ -43,3 +43,20 @@
   ### Properties
   - **defaultValue**: For By Default Selected Item.
   - **Additional properties**: `onChange`, `disabled`, `sx`, etc.
+
+## AppBar:
+
+- App Bar displays content on top of the screen.
+- It is used to build navigation bar with Material UI
+
+  ### Properties
+  - **position**: For Navbar Posotioning.
+  - **Additional properties**: `color`, `sx`, etc.
+
+## Toolbar:
+
+- Toolbar provides a structure for adding elements.
+
+  ### Properties
+  - **flex position**: For display.
+  - **Additional properties**: `color`, `sx`, etc.
