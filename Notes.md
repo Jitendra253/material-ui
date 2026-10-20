@@ -78,3 +78,13 @@
   ### Properties
   - **value, onChange**: to set active Tab
   - **Additional properties**:Like `indicator Color`,`textColor`, etc.
+
+## Card:
+
+- A surface that displays content and actions on single topic.
+- can be images, Text, Headings, Actions like a Blog post.
+- Have multiple components to complete a Card.
+
+  ### Properties
+  - **maxWidth**: To define maximum width
+  - **Additional properties**:Like `sx`,`classes`, etc.
