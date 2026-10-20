@@ -60,3 +60,12 @@
   ### Properties
   - **flex position**: For display.
   - **Additional properties**: `color`, `sx`, etc.
+
+## Menu:
+
+- Menu is used to display list of choices to select
+- It has MenuItem component to add list item.
+
+  ### Properties
+  - **anchorEl**: to set ahcor position(target tag)
+  - **Additional properties**: `open`,`onClose`, `sx`, etc.

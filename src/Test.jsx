@@ -1,76 +1,28 @@
-import { Button, TextField, FormGroup, FormControlLabel, Checkbox, FormControl, InputLabel, MenuItem, Select } from '@mui/material'
-import { useState } from 'react'
-
+import { Button, Menu, MenuItem } from "@mui/material";
+import { useState } from "react";
 const Test = () => {
-  const [inputs, setInputs] = useState({
-    name: "",
-    email: "",
-    password: "",
-    subscribe: false,
-    age: 0
-  })
-  const handleChange = (e) => {
-    setInputs(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }))
-
+  const [anchorElm, setAnchorElm] = useState(null);
+  const [open, setOpen] = useState(false)
+  const handleClose = () => {
+    setAnchorElm(null)
+    setOpen(false)
   }
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(inputs)
+  const handleClick = (e) => {
+    setAnchorElm(e.currentTarget);
+    setOpen(true)
   }
   return (
-    <>
-      <div>
-        <form style={{ display: 'flex', flexDirection: 'column' }} onSubmit={handleSubmit}>
-          <TextField
-            name='name'
-            value={inputs.name}
-            onChange={handleChange}
-            type='text'
-            sx={{ margin: 3 }}
-            placeholder='Name' variant='outlined' />
-          <TextField
-            name='email'
-            value={inputs.email}
-            onChange={handleChange}
-            type='email'
-            sx={{ margin: 3 }}
-            placeholder='Email'
-            variant='standard' />
-          <TextField
-            name='password'
-            value={inputs.password}
-            onChange={handleChange}
-            type='password'
-            sx={{ margin: 3 }}
-            placeholder='Password'
-            variant='filled' />
-          <FormGroup>
-            <FormControlLabel control={<Checkbox onChange={() => setInputs(prev => ({
-              ...prev, subscribe: !inputs.subscribe
-            }))} />} label="Subscribe  To Newsletter" />
-          </FormGroup>
+    <div>
+      <Button variant="contained" onClick={handleClick}>Open Menu</Button>
+      <Button onClick={handleClick}>Open Menu Again</Button>
+      <Menu anchorEl={anchorElm} open={open} onClose={handleClose}>
 
-          <FormControl fullWidth>
-            <InputLabel  >Age</InputLabel>
-            <Select
-              value={inputs.age}
-              label="Age"
-              name="age"
-              onChange={handleChange}
-            >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
-          </FormControl>
-          <Button type='submit'>Submit</Button>
-        </form>
-      </div>
-    </>
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>Balance</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+
+      </Menu>
+    </div>
   )
 }
-
-export default Test
+export default Test;
