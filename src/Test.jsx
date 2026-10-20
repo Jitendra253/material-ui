@@ -1,27 +1,15 @@
-import { Button, Menu, MenuItem } from "@mui/material";
+import { Tabs, Tab } from "@mui/material";
 import { useState } from "react";
 const Test = () => {
-  const [anchorElm, setAnchorElm] = useState(null);
-  const [open, setOpen] = useState(false)
-  const handleClose = () => {
-    setAnchorElm(null)
-    setOpen(false)
-  }
-  const handleClick = (e) => {
-    setAnchorElm(e.currentTarget);
-    setOpen(true)
-  }
+  const [value, setValue] = useState(0)
+
   return (
     <div>
-      <Button variant="contained" onClick={handleClick}>Open Menu</Button>
-      <Button onClick={handleClick}>Open Menu Again</Button>
-      <Menu anchorEl={anchorElm} open={open} onClose={handleClose}>
-
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>Balance</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-
-      </Menu>
+      <Tabs indicatorColor="primary" textColor="secondary" value={value} onChange={(e, val) => setValue(val)}>
+        <Tab label="First"></Tab>
+        <Tab label="Second"></Tab>
+        <Tab label="Third"></Tab>
+      </Tabs>
     </div>
   )
 }

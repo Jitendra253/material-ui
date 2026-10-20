@@ -69,3 +69,12 @@
   ### Properties
   - **anchorEl**: to set ahcor position(target tag)
   - **Additional properties**: `open`,`onClose`, `sx`, etc.
+
+## Tabs:
+
+- Help to switch between different views and navigations.
+- The Tabs is a container of child `<Tab/>` Component
+
+  ### Properties
+  - **value, onChange**: to set active Tab
+  - **Additional properties**:Like `indicator Color`,`textColor`, etc.
